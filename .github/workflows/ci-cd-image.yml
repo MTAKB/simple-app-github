@@ -27,10 +27,10 @@ jobs:
       - name: Login to GitHub Registry
         run: echo ${{ secrets.TOKEN_GITHUB }} | docker login ghcr.io -u mtakb --password-stdin
       - name: Stop and remove existing container
-        run: docker-compose down --rmi all
+        run: docker compose down --rmi all
       - name: Start container
-        run: docker-compose up -d
+        run: docker compose up -d
       - name: View container
-        run: docker-compose ps
+        run: docker compose ps
       - name: Check container
         run: curl localhost:8080 || echo "Container might still be starting"
