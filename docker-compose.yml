@@ -1,0 +1,5 @@
+services:
+  webserver:
+    image: ghcr.io/mtakb/nginx-fantaofan
+    ports:
+      - "8080:80"
